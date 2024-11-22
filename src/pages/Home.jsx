@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { login, logout } from "../redux/slices/authSlice";
+import { Button } from "../ui";
 
 const Home = () => {
   const dispatch = useDispatch(); // Dispatch actions
@@ -20,10 +21,10 @@ const Home = () => {
       {user ? (
         <>
           <h1>Welcome, {user.name}</h1>
-          <button onClick={handleLogout}>Logout</button>
+          <Button onClick={handleLogout}>Logout</Button>
         </>
       ) : (
-        <button onClick={handleLogin}>Login</button>
+        <Button onClick={handleLogin}>Login</Button>
       )}
     </div>
   );
