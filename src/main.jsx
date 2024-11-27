@@ -4,7 +4,7 @@ import "./index.scss";
 import App from "./App.jsx";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router";
-import store from "./redux/store";
+import store from "./app/store";
 import { ConfigProvider } from "antd";
 import theme from "./config/theme.js";
 
