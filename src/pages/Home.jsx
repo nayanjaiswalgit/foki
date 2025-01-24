@@ -1,18 +1,17 @@
-import { useFetchUsersQuery } from "../features/users/usersApiSlice";
+import { Button } from "antd";
+import { useLoginMutation } from "../features/users/authApi.Slice";
 
 const Home = () => {
-  const { data: users, error, isLoading } = useFetchUsersQuery();
-
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
+  const [login] = useLoginMutation();
 
   return (
     <div>
-      <ul>
-        {users.map((user) => (
-          <li key={user.id}>{user.name}</li>
-        ))}
-      </ul>
+      <Button
+        type="primary"
+        onClick={() => login({ username: "admin", password: "admin" })}
+      >
+        Login
+      </Button>
     </div>
   );
 };

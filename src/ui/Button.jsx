@@ -1,7 +1,7 @@
 import { Button } from "antd";
 
-const button = ({ children, ...props }) => {
+const ButtonComponent = ({ children, ...props }) => {
   return <Button {...props}>{children}</Button>;
 };
 
-export default button;
+export default ButtonComponent;
